@@ -3,24 +3,29 @@ source('Funciones.R')
 #Ejercicio 1
 
   #Ruts: Lista de Int y string intercalado.
-  #Def Rust: Lista de 10002 datos distintos, de 8 digitos (rut)
+  #Def Rust: Lista de 5001 datos distintos, de 8 digitos (rut)
             #y el digito verificador (dv) asociado al dato
-            # de manera intercalada
   #Ejemplo: Ruts
-          # [1] 18938259
-          # [2] 6
+          # [1] 18938259 - 6
 
   #dv: Int->String
   #Def dv: Retorna el digito verificador de cada eleento de la lista para validar el Rut
   #Ejemplo: dv(9259674)->k
 
-Ruts<-list()
-for(i in 18933987:(18933987+5000)){
-  Ruts <- c(Ruts, i, dv(i))
-}
 
 #Test
-print(paste(Ruts))
+
+dv(18938259)
+
+rm(Ruts)
+
+t<-proc.time()
+Ruts<-list()
+for(i in 18933987:(18933987+5000)){
+  rut<-print(paste(i,"-",dv(i)))
+  Ruts <- c(Ruts,rut)
+}
+proc.time()-t
 
 
 #Ejercicio 2
@@ -46,12 +51,10 @@ print(paste(Ruts))
   # ->   [1] ""        "el"      "perrito" "de"      "rita"    "me"      "irrita." "dile"   
   #      [9] "a"       "que"     "cambie"  "por"     "perrita"
 
+
 Minuscula<-tolower(Contar)
-
 Unico<-unique(Minuscula)
-
 Minuscula2<-tolower(Contar2)
-
 Unico2<-unique(Minuscula2)
 
 #Test1
@@ -63,3 +66,15 @@ Unico
 Contar2
 Minuscula2
 Unico2
+
+
+#Se crean listas
+TextoEnMinuscula2<-list()
+for(i in (Minuscula2[1:14])){
+  TextoEnMinuscula2<-c(TextoEnMinuscula2,i)
+}
+
+TextoUnico2<-list()
+for(i in (Unico2[1:11])){
+  TextoUnico2<-c(TextoUnico2,i)
+}
