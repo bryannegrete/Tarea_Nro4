@@ -3,7 +3,7 @@ source('Funciones.R')
 #Ejercicio 1
 
   #Ruts: Lista de Int y string intercalado.
-  #Def Rust: Lista de 5001 datos distintos, de 8 digitos (rut)
+  #Def Ruts: Lista de 5001 datos distintos, de 8 digitos (rut)
             #y el digito verificador (dv) asociado al dato
   #Ejemplo: Ruts
           # [1] 18938259 - 6
@@ -33,7 +33,7 @@ proc.time()-t
   #Contar: String->String
   #Def contar: "strsplit(a,b)[[1]]":
   #             Seprara y cuenta las palabras ingresadas en "a"
-  #             Separadas por la condición de "b"
+  #             Separadas por la condici?n de "b"
   #Ejemplo: Contar<-strsplit(" El perrito de Rita me irrita. Dile a Rita
   #         que cambie el perrito por perrita "," ")[[1]] 
   #          -> [1] ""        "El"      "perrito" "de"      "Rita"    "me"      "irrita." "Dile"   
@@ -68,13 +68,43 @@ Minuscula2
 Unico2
 
 
-#Se crean listas
-TextoEnMinuscula2<-list()
-for(i in (Minuscula2[1:14])){
-  TextoEnMinuscula2<-c(TextoEnMinuscula2,i)
+#Contado las palabras
+ContandoLlamas<-list()
+for(i in 1:length(Unico2)){
+  print(Unico2[i])
+  contador <- 0
+  for (y in 1:length(Minuscula2)){
+    print(Minuscula2[y])
+    if(Unico2[i]==Minuscula2[y]){
+      print(contador <- contador+1)
+    }
+  }
+ContandoLlamas<-c(ContandoLlamas,contador) 
 }
 
-TextoUnico2<-list()
-for(i in (Unico2[1:11])){
-  TextoUnico2<-c(TextoUnico2,i)
-}
+#Ejercicio 3
+  #SaldoNegativa: String->Int
+  #Def: Cuenta la cantidad de clientes
+      # que tienen saldo negativo insrtos en una lista.
+  #Ejemplo: SaldoNagito(ListaClientes) -> 4
+
+ListaClientes<-list(list(1,"A",-1200),
+                    list(2,"B",-900),
+                    list(3,"C",-500),
+                    list(4,"D",5000),
+                    list(5,"E",-1500))
+
+#Test
+SaldoNegativo(ListaClientes)
+
+
+#Ejercicio 4
+  #SaldoNegativa: String->String
+  #Def: Retorna las frases en una oracion sin vocales
+  #Ejemplo: SinVocales('El partido termino con 0 goles')->'l prtd trmn cn 0 gls'
+
+Oracion<- "Otra semana consecutiva de alza en las acciones de la bolsa"
+
+#Test
+SinVocales(Oracion)
+

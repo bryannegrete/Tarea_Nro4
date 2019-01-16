@@ -33,4 +33,9 @@ R:/ 5000 Ruts demoran:
 	   string, dada las condiciones de "b".
 
 ¿Cuantas llamas eran?
-R:/ 
+R:/ 4 llamas
+
+3) Se confecciona función para poder contar los clientes que mantienen un saldo negativo
+en sus cuentas las cuales están ingresadas en una lista.
+
+4) Se realiza función para sacar las vocales de una oración retornando las frases solo con consonantes.
